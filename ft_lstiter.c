@@ -25,3 +25,27 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 		tmp = tmp->next;
 	}
 }
+
+void multipl(void *x)
+{
+	*(int *)x = *(int *)x * 5;
+}
+#include <stdio.h>
+int main()
+{
+	int a  = 5;
+	int i =0;
+	t_list *head;
+	t_list *retur;
+
+	head = ft_lstnew(&a);
+	while (i < 4)
+	{
+		ft_lstadd_back(&head,ft_lstnew(&a));
+		i++;
+	}
+	ft_lstiter(head,multipl);
+	retur = ft_lstlast(head);
+	printf("%i", *(int *)(retur->content));
+	return (0);
+}

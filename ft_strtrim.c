@@ -17,7 +17,7 @@ static int	debut_check(char const *s1, char const *set)
 	unsigned int	i;
 
 	i = 0;
-	while (ft_strchr(set, s1[i]) != NULL)
+	while (ft_strchr(set, s1[i]) != NULL && s1[i])
 		i++;
 	return (i);
 }
@@ -28,7 +28,7 @@ static int	check_fin(char const *s1, char const *set, int ls1)
 
 	i = 0;
 	ls1--;
-	while (ft_strchr(set, s1[ls1]) != NULL)
+	while (ft_strchr(set, s1[ls1]) != NULL && s1[i])
 	{
 		ls1--;
 		i++;

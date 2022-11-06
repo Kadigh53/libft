@@ -28,7 +28,7 @@ static int	is_space(const char *str)
 	int	i;
 
 	i = 0;
-	while ((str[i] > 8 && str[i] < 14) || (str[i] == 32) || str[i] == 0)
+	while (((str[i] > 8 && str[i] < 14) || (str[i] == 32)) && str[i] != 0)
 		i++;
 	return (i);
 }
